@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2C3E50; /* Dark blue header */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #F5F7FA; /* Light gray for even rows */
+}
+tr:hover {
+    background-color: #E6F0FA; /* Light blue on hover */
+}
