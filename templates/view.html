@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/view.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
+    <title>View - GCTU Application System</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/images/logo-gctu.png') }}" alt="GCTU Logo" height="100">
+        </div>
+        <nav>
+            <a href="{{ url_for('apply') }}">Apply</a>
+            <a href="{{ url_for('view') }}" class="active">View</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>STUDENT APPLICATIONS</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Full Name</th>
+                    <th>Program of Study</th>
+                </tr>
+            </thead>
+            <tbody id="student-table-body">
+                <!-- Table rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        async function loadStudents() {
+            try {
+                const response = await fetch('/api/students');
+                const students = await response.json();
+                const tbody = document.getElementById('student-table-body');
+                tbody.innerHTML = ''; // Clear existing rows
+                if (students.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="3">No applications yet.</td></tr>';
+                } else {
+                    students.forEach(student => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${student.StudentID}</td>
+                            <td>${student.Student_Name}</td>
+                            <td>${student.Program}</td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading students:', error);
+                document.getElementById('student-table-body').innerHTML = 
+                    '<tr><td colspan="3">Error loading data.</td></tr>';
+            }
+        }
+
+        // Load students when the page loads
+        window.onload = loadStudents;
+    </script>
+</body>
+</html>

@@ -3,29 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/apply.css">
-    <link rel="stylesheet" href="styles/shared.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/apply.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
     <title>Apply - GCTU Application System</title>
 </head>
 <body>
-
-    <!-- Header Section: Shared across pages -->
     <header>
         <div class="logo">
-            <img src="assets/images/logo-gctu.png" alt="GCTU Logo" height="100">
+            <img src="{{ url_for('static', filename='assets/images/logo-gctu.png') }}" alt="GCTU Logo" height="100">
         </div>
         <nav>
-            <!-- Navigation links; "Apply" is active on this page -->
-            <a href="view.html" class="active">Apply</a>
-            <a href="view.html">View</a>
+            <a href="{{ url_for('apply') }}" class="active">Apply</a>
+            <a href="{{ url_for('view') }}">View</a>
         </nav>
     </header>
-
-    <!-- Main Content: Student Application Form -->
     <div class="container">
         <h2>STUDENT APPLICATION FORM</h2>
-        <form action="#" method="post"> <!-- Update action to your form handler -->
-            <!-- Personal Information Section -->
+        <form action="{{ url_for('apply') }}" method="post">
             <div class="form-section">
                 <label>Personal Information</label>
                 <div class="form-section-flex">
@@ -39,8 +33,6 @@
                     <input type="text" name="nationality" placeholder="Nationality" required>
                 </div>
             </div>
-
-            <!-- Contact Information Section -->
             <div class="form-section">
                 <label>Contact Information</label>
                 <div class="form-section-flex">
@@ -48,8 +40,6 @@
                     <input type="tel" name="phone" placeholder="Phone Number" required>
                 </div>
             </div>
-
-            <!-- Gender Section -->
             <div class="form-section">
                 <label>Gender</label>
                 <div class="radio-group">
@@ -57,13 +47,10 @@
                     <label class="label-radio"><input type="radio" name="gender" value="female"> Female</label>
                 </div>
             </div>
-
-            <!-- Program of Study Section -->
             <div class="form-section">
                 <label>Program of Study</label>
                 <select name="program" required>
                     <option value="" disabled selected>Choose Program</option>
-                    <!-- Example options; update with actual programs -->
                     <option value="bsc-cs">BSc. Computer Science</option>
                     <option value="bsc-it">BSc. Information Technology</option>
                     <option value="bsc-telecom">BSc. Telecommunications Engineering</option>
@@ -72,6 +59,5 @@
             <button type="submit">APPLY</button>
         </form>
     </div>
-
 </body>
 </html>
