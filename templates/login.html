@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
+    <title>Log In - GCTU Application System</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/images/logo-gctu.png') }}" alt="GCTU Logo" height="100">
+        </div>
+        <div>
+            LOG IN
+        </div>
+    </header>
+    <div class="container">
+        <h2>LOGIN TO APPLY</h2>
+        <form action="{{ url_for('login') }}" method="post">
+            <div class="form-section">
+                <div class="serial-input">
+                    <label>Serial Number</label>
+                    <input type="text" name="serial-no" placeholder="HDFFH28238" required>
+                </div>
+                <div class="pin-input">
+                    <label>PIN</label>
+                    <input type="number" name="pin" placeholder="1234" required>
+                </div>
+            </div>
+            <button type="submit">LOG IN</button>
+        </form>
+    </div>
+</body>
+</html>
