@@ -15,6 +15,7 @@
         <nav>
             <a href="{{ url_for('apply') }}">Apply</a>
             <a href="{{ url_for('view') }}" class="active">View</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
         </nav>
     </header>
     <div class="container">
@@ -38,7 +39,7 @@
                 const response = await fetch('/api/students');
                 const students = await response.json();
                 const tbody = document.getElementById('student-table-body');
-                tbody.innerHTML = ''; // Clear existing rows
+                tbody.innerHTML = '';
                 if (students.length === 0) {
                     tbody.innerHTML = '<tr><td colspan="3">No applications yet.</td></tr>';
                 } else {
@@ -58,8 +59,6 @@
                     '<tr><td colspan="3">Error loading data.</td></tr>';
             }
         }
-
-        // Load students when the page loads
         window.onload = loadStudents;
     </script>
 </body>

@@ -1,29 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E2F6FF; /* Light blue background */
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+header {
+    background-color: #2E245B; /* Dark blue header */
+    color: #FFFFFF;
+    display: flex;
+    padding-right: 89px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    background-color: #2E245B;
+    border: 2px solid #2C3E50; /* Dark blue border */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
 h2 {
-    text-align: center;
-    color: #2C3E50; /* Dark blue text */
+    margin-bottom: 0;
+}
+
+.form-inputs-row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
 }
 
 .form-section {
-    margin-bottom: 20px;
-}
-
-.form-section-flex {
     display: flex;
-    gap: 80px;
-    padding-bottom:2%;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size:small;
-    color: #FFF;
+    flex-direction: column;
+    gap: 10px;
 }
 
 
-input, select, .input-style {
-    width: 100%;
+input, button {
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -31,40 +57,18 @@ input, select, .input-style {
     background-color: #E2F6FF; /* Light gray background for inputs */
 }
 
-#form-section-flex-dob-nat {
-    display: flex;
-}
-
-.dob-container {
-    display: flex;
-    gap: 10px;
-    width: 109%;
-}
-
-.dob-box {
-    width: 20%;
-    font-weight: 400;
-    color: #2C3E50;
-}
-
-.radio-group {
-    display: flex;
-    gap: 290px;
-    align-items: center;
-}
-
-.label-radio {
- display: flex;
+button{
+    display: block;
+    height: 50%;
 }
 
 button {
+    width: 68%;
     background-color: #E2F6FF; /* Dark blue button */
     color: #2C3E50;
     font-size: larger;
-    font-weight: 700;
-    padding: 10px;
+    font-weight: 600;
     border: none;
     border-radius: 5px;
-    width: 100%;
     cursor: pointer;
 }
