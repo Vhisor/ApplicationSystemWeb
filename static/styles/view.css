@@ -16,8 +16,14 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #F5F7FA; /* Light gray for even rows */
+    background-color: #E6F0FA; /* Light gray for even rows */
 }
+
+tr:nth-child(odd) {
+    color: #91a6b9;
+}
+
 tr:hover {
     background-color: #E6F0FA; /* Light blue on hover */
+    color: #2C3E50;
 }

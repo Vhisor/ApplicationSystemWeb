@@ -107,7 +107,7 @@ def apply():
             conn.close()
 
         return redirect(url_for('view'))
-    return render_template('index.html')
+    return render_template('apply.html')
 
 # View route (protected)
 @app.route('/view')
