@@ -1,0 +1,70 @@
+h2 {
+    text-align: center;
+    color: #2C3E50; /* Dark blue text */
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section-flex {
+    display: flex;
+    gap: 80px;
+    padding-bottom:2%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size:small;
+    color: #FFF;
+}
+
+
+input, select, .input-style {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #E2F6FF; /* Light gray background for inputs */
+}
+
+#form-section-flex-dob-nat {
+    display: flex;
+}
+
+.dob-container {
+    display: flex;
+    gap: 10px;
+    width: 109%;
+}
+
+.dob-box {
+    width: 20%;
+    font-weight: 400;
+    color: #2C3E50;
+}
+
+.radio-group {
+    display: flex;
+    gap: 290px;
+    align-items: center;
+}
+
+.label-radio {
+ display: flex;
+}
+
+button {
+    background-color: #E2F6FF; /* Dark blue button */
+    color: #2C3E50;
+    font-size: larger;
+    font-weight: 700;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}

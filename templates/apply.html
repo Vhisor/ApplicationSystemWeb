@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/apply.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
+    <title>Apply - GCTU Application System</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/images/logo-gctu.png') }}" alt="GCTU Logo" height="100">
+        </div>
+        <nav>
+            <a href="{{ url_for('apply') }}" class="active">Apply</a>
+            <a href="{{ url_for('view') }}">View</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>STUDENT APPLICATION FORM</h2>
+        <form action="{{ url_for('apply') }}" method="post">
+            <div class="form-section">
+                <label>Personal Information</label>
+                <div class="form-section-flex">
+                    <input type="text" name="first-name" placeholder="First Name" required>
+                    <input type="text" name="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="form-section-flex" id="form-section-flex-dob-nat">
+                    <span class="dob-container">
+                        <span class="dob-box input-style">DOB</span><input type="date" name="dob" required>
+                    </span>
+                    <input type="text" name="nationality" placeholder="Nationality" required>
+                </div>
+            </div>
+            <div class="form-section">
+                <label>Contact Information</label>
+                <div class="form-section-flex">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+            </div>
+            <div class="form-section">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label class="label-radio"><input type="radio" name="gender" value="male" checked> Male</label>
+                    <label class="label-radio"><input type="radio" name="gender" value="female"> Female</label>
+                </div>
+            </div>
+            <div class="form-section">
+                <label>Program of Study</label>
+                <select name="program" required>
+                    <option value="" disabled selected>Choose Program</option>
+                    <option value="bsc-cs">BSc. Computer Science</option>
+                    <option value="bsc-it">BSc. Information Technology</option>
+                    <option value="bsc-telecom">BSc. Telecommunications Engineering</option>
+                </select>
+            </div>
+            <button type="submit">APPLY</button>
+        </form>
+    </div>
+</body>
+</html>
